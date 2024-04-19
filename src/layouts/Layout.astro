@@ -1,16 +1,16 @@
 ---
-import "@fontsource-variable/onest"
-import "@fontsource/fira-mono"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
+import "@fontsource-variable/onest";
+import "@fontsource/fira-mono";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,6 +32,10 @@ const { description, title } = Astro.props
       dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] dark:bg-[size:20px_20px]"
+    >
+    </div>
     <Header />
     <slot />
     <Footer />
@@ -41,7 +45,7 @@ const { description, title } = Astro.props
       }
 
       html {
-        font-family: 'Fira Mono', monospace;
+        font-family: "Fira Mono", monospace;
         scroll-behavior: smooth;
       }
 
