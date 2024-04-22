@@ -8,6 +8,7 @@ import CSS from "./icons/CSS.astro";
 import Bootstrap from "./icons/Bootstrap.astro";
 import GitHub from "./icons/GitHub.astro";
 import Git from "./icons/Git.astro";
+import { defineScriptVars } from "astro/compiler-runtime";
 
 const TAGS = {
     REACT: {
@@ -60,13 +61,14 @@ const CERTIFICATES = [
             TAGS.GitHub,
             TAGS.Git,
         ],
+        description: "Stack",
     },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
     {
-        CERTIFICATES.map(({ image, title, tags, link }) => (
+        CERTIFICATES.map(({ image, title, tags, link, description }) => (
             <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
                 <div class="w-full md:w-1/2">
                     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -82,6 +84,9 @@ const CERTIFICATES = [
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
                         {title}
                     </h3>
+                    <div class="mt-2 text-gray-700 dark:text-gray-400">
+                        {description}
+                    </div>
                     <div class="flex flex-wrap mt-2">
                         <ul class="flex flex-row flex-wrap mb-2 gap-x-2">
                             {tags.map((tag) => (
