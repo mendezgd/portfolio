@@ -5,6 +5,7 @@ import LinkButton from "./LinkButton.astro";
 import React from "./icons/React.astro";
 import CSS from "./icons/CSS.astro";
 import Bootstrap from "./icons/Bootstrap.astro";
+import Tailwind from "./icons/Tailwind.astro";
 
 const TAGS = {
   REACT: {
@@ -21,6 +22,11 @@ const TAGS = {
     name: "Bootstrap",
     class: "bg-[#003159] text-white",
     icon: Bootstrap,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
   },
 };
 const PROJECTS = [
@@ -41,6 +47,15 @@ const PROJECTS = [
     github: "https://github.com/mendezgd/BlackIt",
     image: "/projects/blackit.webp",
     tags: [TAGS.REACT, TAGS.CSS, TAGS.Bootstrap],
+  },
+  {
+    title: "turK's Reader",
+    description:
+      "Lector de manga creado desde cero con React, Tailwind y hosting en Firebase.",
+    link: "https://turkreader.vercel.app/",
+    github: "https://github.com/mendezgd/turkreader",
+    image: "/projects/turksreader.png",
+    tags: [TAGS.REACT, TAGS.Tailwind],
   },
 ];
 ---
